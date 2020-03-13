@@ -1,0 +1,25 @@
+@import './tokens';
+
+@mixin default-headings($heading__maxNumber: 6) {
+
+  @for $idx from 1 to ($heading__maxNumber + 1) {
+    $font__size: map-get($headings__fontSize, h#{$idx});
+    $font__size--bold: map-get($headings__fontSize--bold, h#{$idx});
+    $font__fontWeight: map-get($headings__fontWeight, h#{$idx});
+
+    h#{$idx} {
+
+      margin: 0;
+
+      font-family: $base__fontFamily;
+      font-size: $font__size;
+      font-weight: $font__fontWeight;
+
+      b {
+        font-size: $font__size--bold;
+
+      }
+    }
+  }
+
+}
